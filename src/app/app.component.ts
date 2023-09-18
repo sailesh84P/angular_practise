@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'angularPractise';
+  title = 'BabylonJS with Angular';
   subtitle = "Practise for BabylonJS";
 }
