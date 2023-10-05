@@ -1,0 +1,20 @@
+<div style="width: 40%; float: left;">
+    <ng-select [items]="people | async" [multiple]="true" [closeOnSelect]="false" [hideSelected]="false" bindValue="id" bindLabel="name"
+        placeholder="Select people" [(ngModel)]="selectedPeople">
+    </ng-select>
+    <small>{{selectedPeople | json}}</small>
+</div>
+<div style="width: 50%; float: right;">
+    <ng-select [items]="people | async" [multiple]="true" [closeOnSelect]="true" [hideSelected]="false" bindValue="id" bindLabel="name"
+        placeholder="Select people" [(ngModel)]="selectedPeople" (change)="onChange($event)" >
+        <ng-template ng-option-tmp let-item="item" let-item$="item$" let-index="index">
+            <input id="item-{{index}}" type="checkbox" [ngModel]="item$.selected"/> {{item.name}}
+        </ng-template>
+    </ng-select>
+    <br>
+<div *ngFor="let event of events">
+    <small>{{event.value | json}}</small>
+    <hr>
+</div>
+</div>
+
